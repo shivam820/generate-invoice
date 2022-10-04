@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Invoice-Generator</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+   
+    
+    <link href="http://fonts.cdnfonts.com/css/cerebri-sans" rel="stylesheet">
+    <style>
+    
+    body {
+        font-family: Georgia, 'Times New Roman', Times, sans-serif;
+        font-size: 16px;
+        background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+    }
+
+    .required {
+    color: red;
+    }
+    
+    
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
+
+    #center-button{
+        text-align: center;
+    }
+
+
+    </style>
+  <!--moz-appearance hides number input up-down arrow key-->
+
+</head>
+<body>
+    <!--<div style="padding-left: 50px; padding-right: 50px;"><script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+
+
+<div class="container" style="background-color: #FFFFFF ;border-radius:25px">
+    <hr style="border-bottom: 4px dashed #bbb;">
+    <h2 align="center" style="border-radius: 25px; background: #89CFF0;"class="font-weight-bold">Invoice Generator</h2>
+    <hr style="border-top: 4px dashed #bbb;">
+    <form action="">
+     <div class="table-responsive p-2">
+        <table class="table table-borderless">
+            <tbody>
+    
+                <tr class="content">
+                    <td class="font-weight-bold">
+                        <div class="form-group row">
+                
+                            <label for="invoice-num" class="col-sm-2 col-form-label">Invoice No. <span class="required">*</span> </label>
+                            <div class="col-sm-2">
+                                <input type="number" class="form-control" id="invoice-no" placeholder="Invoice No." required>
+                            </div>
+                        </div>
+                
+                        <div class="form-group row">
+                            <label for="invoice-date" class="col-sm-2 col-form-label">Invoice Date <span class="required">*</span></label>
+                            <div class="col-sm-2">
+                                <input type="date" class="form-control" id="invoice-date" placeholder="Invoice Date" required>
+                            </div>
+                        </div>
+                </tr>
+            </tbody> </table>
+            <hr style="border-bottom: 4px dashed #bbb;">
+        </div>
+    <div class="table-responsive p-2">
+        <table class="table table-borderless">
+            <tbody>
+                
+                <tr class="add">
+                    <td><h2 style="background: #89CFF0; border-radius:8px; width: 280px;">Customer Details</h2></td>
+                    
+                </tr>
+
+                    <td class="font-weight-bold">
+                            <div class="form-group row">
+                                <label for="bname" class="col-sm-2 " >Name:<span class="required">*</span></label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="b-name" placeholder="Customer Name" align="right" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="bcompany" class="col-sm-2 ">Company:<span class="required">*</span></label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="b-name" placeholder="Company Name " align="right" required>
+                                </div>
+                            </div>
+                    
+                            <div class="form-group row">
+                                <label for="bAddress" class="col-sm-2 ">Address:<span class="required">*</span></label>
+                                <div class="col-sm-3">
+                                    <textarea class="form-control" id="b-add" placeholder="Customer Address"  required></textarea>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group row">
+                                <label for="bPhone" class="col-sm-2 ">Phone:<span class="required">*</span></label>
+                                <div class="col-sm-3">
+                                    <input class="form-control numphone"
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                        type="number" maxlength="10" id="b-phone" placeholder="Customer Phone" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="bEmail" class="col-sm-2 ">Email:<span class="required">*</span></label>
+                                <div class="col-sm-3">
+                                    <input type="email" class="form-control num" id="b-phone" placeholder="Customer Email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="cState" class="col-sm-2 ">Place of Supply: <span class="required">*</span></label>
+                                <div class="col-sm-3">
+                                    <select name="state" id="state" class="form-control">
+                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                        <option value="Assam">Assam</option>
+                                        <option value="Bihar">Bihar</option>
+                                        <option value="Chandigarh">Chandigarh</option>
+                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                        <option value="Daman and Diu">Daman and Diu</option>
+                                        <option value="Delhi">Delhi</option>
+                                        <option value="Lakshadweep">Lakshadweep</option>
+                                        <option value="Puducherry">Puducherry</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Gujarat">Gujarat</option>
+                                        <option value="Haryana">Haryana</option>
+                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                        <option value="Jharkhand">Jharkhand</option>
+                                        <option value="Karnataka">Karnataka</option>
+                                        <option value="Kerala">Kerala</option>
+                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                        <option value="Maharashtra">Maharashtra</option>
+                                        <option value="Manipur">Manipur</option>
+                                        <option value="Meghalaya">Meghalaya</option>
+                                        <option value="Mizoram">Mizoram</option>
+                                        <option value="Nagaland">Nagaland</option>
+                                        <option value="Odisha">Odisha</option>
+                                        <option value="Punjab">Punjab</option>
+                                        <option value="Rajasthan">Rajasthan</option>
+                                        <option value="Sikkim">Sikkim</option>
+                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                        <option value="Telangana">Telangana</option>
+                                        <option value="Tripura">Tripura</option>
+                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                        <option value="Uttarakhand">Uttarakhand</option>
+                                        <option value="West Bengal">West Bengal</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="bGst" class="col-sm-2 ">GSTIN:<span class="required">*</span></label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="b-add" placeholder="Customer GSTIN" required>
+                                </div>
+                            </div>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <hr style="border-top: 4px dashed #bbb;">
+
+   <br> <h2 style="background: #CCCCFF; border-radius:5px; width:220px;">Invoice Table</h2><br>
+    <div class="row clearfix">
+        <div class="col-md-12 table-responsive p-2">
+            <table class="table table-bordered table-hover" id="goods_table">
+                <thead class="table-primary">
+                    <th>Sr No.<span class="required">*</span></th>
+                    <th>Description<span class="required">*</span></th>
+                    <th>Amount (In ₹)<span class="required">*</span></th>
+                    
+    
+                </thead>
+                <tbody>
+                    <tr id="addr0">
+                        <td>1</td>
+                        <td><input type="text" name="item-description" class="form-control" id="item-desc" required></td>
+                        <td><input type="number" name="item-amt" id="item-amt" class="form-control amount" placeholder="0.00" min="0" required></td>
+                    </tr>
+                    <tr id="addr1"></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <button type="button" id="add_row" class="btn btn-primary" >Add Row</button>
+    <button type="button" id="delete_row" class="btn btn-danger" >Delete Row</button>
+    <br><br>
+    <div class="row clearfix">
+        <div class="pull-right col-md-4">
+            <table class="table table-bordered table-hover bg-secondary" style="border: 1px" id="table-total">
+                <tbody class="thead-dark">
+                    <tr>
+                        <th class="text-center">Taxable Amount</th>
+                        <th class="text-center"><input type="number" name='tax_amount' id="tax_amount" placeholder='0.00'
+                                class="form-control" readonly /></th>
+                        <th class="text-center">₹</th>
+                    </tr>
+                    <tr>
+                        <th class="text-center">CGST 9%</th>
+                        <th class="text-center"><input type="number" name='cgst' id="cgst" placeholder='0.00'
+                                class="form-control" readonly /></th>
+                        <th class="text-center">₹</th>
+                    </tr>
+                    <tr>
+                        <th class="text-center">SGST 9%</th>
+                        <th class="text-center"><input type="number" name='sgst' id="sgst" placeholder='0.00'
+                                class="form-control" readonly /></th>
+                        <th class="text-center">₹</th>
+                    </tr>
+                    <tr>
+                        <th class="text-center">Grand Total</th>
+                        <th class="text-center"><input type="number" name='total_amount' id="total_amount"
+                                placeholder='0.00' class="form-control" readonly /></th>
+                        <th class="text-center">₹</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <hr style="border-top: 4px dashed #bbb;">
+    <div id="center-button">
+        <button class="btn" type="submit"  style="background-color: #00BFFF; padding: 30px; border-radius: 55px; font-weight:bold;"
+        id="export"><img src="down.png" height="40" width="40" /> Download Invoice as PDF</button>
+    <hr style="border-top: 4px dashed #bbb;">
+    </div>
+    </div>
+    
+   
+    <br>
+    </form>
+</div>
+
+    
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+<script>
+
+    $(document).ready(function () {
+        var i = 1;
+        $("#add_row").click(function () {
+            b = i - 1;
+            $('#addr' + i).html($('#addr' + b).html()).find('td:first-child').html(i + 1);
+            $('#goods_table').append('<tr id="addr' + (i + 1) + '"></tr>');
+            i++;
+            //$("#goods_table").tableHTMLExport({ type: 'pdf', filename: 'sample.pdf' });
+        });
+        $("#delete_row").click(function () {
+            if (i > 1) {
+                $("#addr" + (i - 1)).html('');
+                i--;
+            }
+            calc();
+        });
+
+        /* $("[type='number']").keypress(function (evt) {
+             evt.preventDefault();
+         });     funtion to disable text*/
+
+        $('#goods_table tbody').on('keyup change', function () {
+            calc();
+        });
+
+        //disables scrolling inside input type "number"
+
+
+    });
+
+
+    //disables scrolling inside input type "number"
+    document.addEventListener("wheel", function (event) {
+        if (document.activeElement.type === "number") {
+            document.activeElement.blur();
+        }
+    });
+    function calc() {
+        $('#goods_table tbody tr').each(function (i, element) {
+            var html = $(this).html();
+            if (html != '') {
+
+                amount = 0;
+                $('.amount').each(function () {
+                    amount += parseFloat($(this).val());
+                    console.log(amount);
+                });
+
+                $('#tax_amount').val((amount).toFixed(2));
+
+                calc_total();
+            }
+        });
+    }
+    function calc_total() {
+        tax = 0;
+        $('#tax_amount').each(function () {
+            tax += parseFloat($(this).val());
+            
+        });
+        var sgst = (9 / 100) * tax;
+        var cgst = (9 / 100) * tax;
+
+        total = (sgst + cgst + tax);
+
+        $('#sgst').val((sgst).toFixed(2));
+        $('#cgst').val((cgst).toFixed(2));
+        $('#total_amount').val((total).toFixed(2));
+    }
+
+
+</script>
+
+
+
+
+
+
+</html>
